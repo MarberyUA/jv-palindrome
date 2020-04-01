@@ -20,7 +20,11 @@ public class Palindrome {
      * <p>Пример: Madam, I'm Adam!</p>
      * <p>Результат: true</p>
      */
+
     public boolean isPalindrome(String text) {
-        return false;
+        text = text.replaceAll("\\W", "");
+        text = text.toLowerCase();
+        StringBuilder a = new StringBuilder(text.intern());
+        return text.equals(a.reverse().toString());
     }
 }
